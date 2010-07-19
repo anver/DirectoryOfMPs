@@ -3,8 +3,10 @@
   %head
     %title Directory of Indian MPs
     %link{ :rel=> "stylesheet", :href=>"/css/styles.css", :type=> "text/css" }
+    %link{ :rel=> "stylesheet", :href=> "/facebox/facebox.css", :type=>" text/css"}
     %script{ :type=> "text/javascript", :src=>"http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"}
-    #style
+    %script{ :type=> "text/javascript", :src=>"/facebox/facebox.js"}
+    
   %body
     #content
       #banner
@@ -39,16 +41,6 @@
     dataType: 'html',
     success: function(data) {
       $('#mps').html(data);
-    }
-  });
-  }
-  
-  get_mp = function(mp_id){
-  $.ajax({
-    url: '/mps/'+mp_id,
-    dataType: 'html',
-    success: function(data) {
-      $('#mp_profile').html(data);
     }
   });
   }
