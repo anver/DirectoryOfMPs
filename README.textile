@@ -1,0 +1,3 @@
+h1. MyMinisterApp
+
+A demo app which demonstrates the usage of api.myminister.info

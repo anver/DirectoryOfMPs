@@ -1,0 +1,54 @@
+!!! Strict
+%html{ :lang => "en", :"xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %title Directory
+    %link{ :rel=> "stylesheet", :href=>"/css/styles.css", :type=> "text/css" }
+    %script{ :type=> "text/javascript", :src=>"http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"}
+    #style
+  %body
+    #content
+      #banner
+        %h1
+          Member of Parliament Directory
+      #data
+        #states
+          %h3
+            States and Union Territories
+          %table{:colspan=> "2"}
+            %tr
+              %th
+                Name
+              %th
+                No. of MPs
+            -@states.each do |state|
+              %tr{:onclick=>"get_mps_for_state('#{state['id']}')"}
+                %td{:class=> 'name'}
+                  =state['name']
+                %td{:class=> 'no_of_mps'}
+                  =state['no_of_mps']
+
+        #mps
+          %h3
+            Members of Parliament
+          %center
+            Select a state.
+:javascript
+  get_mps_for_state = function(state_id){
+  $.ajax({
+    url: '/states/'+state_id+'/mps/',
+    dataType: 'html',
+    success: function(data) {
+      $('#mps').html(data);
+    }
+  });
+  }
+  
+  get_mp = function(mp_id){
+  $.ajax({
+    url: '/mps/'+mp_id,
+    dataType: 'html',
+    success: function(data) {
+      $('#mp_profile').html(data);
+    }
+  });
+  }

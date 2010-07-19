@@ -1,0 +1,75 @@
+body {
+  color: #111111;
+  font-family: Georgia,"Times New Roman",Times,serif;
+  font-size: 16px;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+#content {
+  width: 920px;
+  margin: auto;
+}
+  
+#data {
+  background-color: white;
+  padding: 10px 0;
+  overflow: hidden;
+  -moz-box-shadow: 0 0 80px #C7C7CA;
+  -webkit-box-shadow: 0 0 80px #C7C7CA;
+}
+
+table th {
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+table td {
+  padding: 5px 5px;
+}
+
+table tr:hover { 
+  background: #EEEEEE;
+  cursor: pointer;
+}
+
+#states .no_of_mps {
+  text-align: center;
+}
+
+.name {
+  color: #111111;
+  text-decoration: none;
+  border-bottom: 1px dotted #FF7F00;
+}
+
+#states {
+  float: left;
+  width: 410px;
+}
+
+#states table, #mps table {
+  margin: auto;
+}
+
+#mps {
+  float: left;
+  width: 490px;
+}
+
+table {
+  margin: 0 20px;
+}
+
+h3 {
+  text-align: center;
+}
+
+#banner {
+  width: 100%;
+  text-align: center;
+  margin: 35px;
+}

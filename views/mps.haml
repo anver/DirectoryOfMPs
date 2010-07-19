@@ -1,0 +1,18 @@
+%h3
+  Members of Parliament
+%table{:colspan=> "3"}
+  %tr
+    %th
+      Name
+    %th
+      Constituency
+    %th
+      Party  
+  -@mps.each do |mp|
+    %tr{:onclick=> "get_mps('#{mp['id']}')"}
+      %td{:class=> 'name'}
+        =mp['name']
+      %td
+        =mp['constituency']['name']
+      %td
+        =mp['party']['name']
