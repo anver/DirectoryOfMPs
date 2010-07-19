@@ -32,7 +32,7 @@ table td {
 }
 
 table .row:hover { 
-  background: #F7F7F7;
+  background: #ECECEC;
   cursor: pointer;
 }
 

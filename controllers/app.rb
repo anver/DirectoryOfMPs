@@ -23,7 +23,5 @@ end
 
 def get url
   response = HTTParty.get "http://api.myminister.info#{url}.json"
-  p "NEW REQUEST<<<<<<<<<<<<http://api.myminister.info#{url}.json>>>"
-  p response.body.inspect
   Crack::JSON.parse(response.body)
 end
