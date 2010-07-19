@@ -9,7 +9,7 @@
     %th
       Party  
   -@mps.each do |mp|
-    %tr{:onclick=> "get_mps('#{mp['id']}')"}
+    %tr{:onclick=> "get_mps('#{mp['id']}')", :class=> 'row'}
       %td{:class=> 'name'}
         =mp['name']
       %td

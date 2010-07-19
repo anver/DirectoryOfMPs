@@ -1,7 +1,7 @@
 !!! Strict
 %html{ :lang => "en", :"xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml" }
   %head
-    %title Directory
+    %title Directory of Indian MPs
     %link{ :rel=> "stylesheet", :href=>"/css/styles.css", :type=> "text/css" }
     %script{ :type=> "text/javascript", :src=>"http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"}
     #style
@@ -21,7 +21,7 @@
               %th
                 No. of MPs
             -@states.each do |state|
-              %tr{:onclick=>"get_mps_for_state('#{state['id']}')"}
+              %tr{:onclick=>"get_mps_for_state('#{state['id']}')", :class=> 'row'}
                 %td{:class=> 'name'}
                   =state['name']
                 %td{:class=> 'no_of_mps'}

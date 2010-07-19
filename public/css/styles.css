@@ -31,8 +31,8 @@ table td {
   padding: 5px 5px;
 }
 
-table tr:hover { 
-  background: #EEEEEE;
+table .row:hover { 
+  background: #F1F2F8;
   cursor: pointer;
 }
 
