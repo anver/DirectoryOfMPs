@@ -1,3 +1,3 @@
 h1. Directory of MPs
 
-An app which shows the usage of api.myminister.info. 
+A Directory of Indian Member of Parliaments. Shows the usage of @api.myminister.info@. 
