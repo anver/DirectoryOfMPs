@@ -22,6 +22,6 @@ get '/mps/:id' do |id|
 end
 
 def get url
-  response = HTTParty.get "http://api.myminister.info#{url}.json"
+  response = HTTParty.get "#{$API_URL}#{url}.json"
   Crack::JSON.parse(response.body)
 end
