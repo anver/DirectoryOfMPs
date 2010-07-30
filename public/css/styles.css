@@ -1,3 +1,4 @@
+/* --- GLOBAL ---*/
 body {
   color: #111111;
   font-family: Georgia,"Times New Roman",Times,serif;
@@ -16,12 +17,26 @@ li {
   
 #data {
   background-color: white;
-  padding: 10px 0;
+  padding: 10px;
   overflow: hidden;
   -moz-box-shadow: 0 0 80px #C7C7CA;
   -webkit-box-shadow: 0 0 80px #C7C7CA;
 }
 
+
+h3 {
+  text-align: center;
+}
+
+#banner {
+  width: 100%;
+  text-align: center;
+  margin: 35px;
+}
+
+/* --- GLOBAL ---*/
+
+/*--- STATES PAGE---*/
 table th {
   text-align: left;
   padding-bottom: 10px;
@@ -63,13 +78,6 @@ table .row:hover {
 table {
   margin: 0 20px;
 }
-
-h3 {
-  text-align: center;
-}
-
-#banner {
-  width: 100%;
-  text-align: center;
-  margin: 35px;
-}
+/*--- STATES PAGE ---*/
+/* --- MP PAGE ---*/
+/* --- MP PAGE ---*/

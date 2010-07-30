@@ -1,8 +1,49 @@
-.main
-  .profile
-    .name
+#data
+  .group-header
+    .line
       =@mp['name']
-    .position
+    .line
+      Member Parliament from
       =@mp['constituency']['name']
-      ,
-      =@mp['state']
+      =@mp['state_name']
+    .line
+      =@mp['party']['name']
+    .line
+      ="<img src='#{@mp["mp_profile"]["photo"]}'></img>"
+    
+  .group
+    .line
+      =@mp['mp_profile']['email']
+    .line
+      =@mp['mp_profile']['present_address']
+    .line
+      =@mp['mp_profile']['permanent_address']
+  .group
+    .line
+      =@mp['mp_profile']['positions']
+  .group
+    =@mp['mp_profile']['activity']
+
+  .group
+    .line
+      =@mp['mp_profile']['educational_qualifications']
+    .line
+      =@mp['mp_profile']['profession']
+    .line
+      =@mp['mp_profile']['fathers_name']
+    .line
+      =@mp['mp_profile']['mothers_name']
+    .line
+      =@mp['mp_profile']['place_of_birth']
+    .line
+      =@mp['mp_profile']['date_of_birth']
+    .line
+      =@mp['mp_profile']['martial_status']
+    .line
+      =@mp['mp_profile']['date_of_marriage']
+    .line
+      =@mp['mp_profile']['spouse_name']
+    .line
+      =@mp['mp_profile']['no_of_sons']
+    .line
+      =@mp['mp_profile']['no_of_daughters']

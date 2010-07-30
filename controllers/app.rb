@@ -13,7 +13,7 @@ end
 
 get '/states/:state_id/mps/' do |state_id|
   @mps = get "/states/#{state_id}/mps"
-  haml :mps
+  haml :mps, :layout => false
 end
 
 get '/mps/:id' do |id|
@@ -23,5 +23,6 @@ end
 
 def get url
   response = HTTParty.get "#{$API_URL}#{url}.json"
+  p response
   Crack::JSON.parse(response.body)
 end
