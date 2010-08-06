@@ -80,4 +80,27 @@ table {
 }
 /*--- STATES PAGE ---*/
 /* --- MP PAGE ---*/
+#profile {
+  width: 600px;
+}
+
+.group-header {
+  background-color: #FCFCFC;
+  overflow: hidden;
+  padding: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.profile-header {
+  float: left;
+}
+
+.photo {
+  float: right;
+}
+
+.label {
+  font-weight: bold;
+}
 /* --- MP PAGE ---*/

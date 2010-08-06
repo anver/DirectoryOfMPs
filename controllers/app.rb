@@ -18,11 +18,10 @@ end
 
 get '/mps/:id' do |id|
   @mp = get "/mps/#{id}"
-  haml :mp
+  haml :mp, :layout => false
 end
 
 def get url
   response = HTTParty.get "#{$API_URL}#{url}.json"
-  p response
   Crack::JSON.parse(response.body)
 end

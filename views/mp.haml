@@ -1,22 +1,29 @@
-#data
+#profile
   .group-header
-    .line
-      =@mp['name']
-    .line
-      Member Parliament from
-      =@mp['constituency']['name']
-      =@mp['state_name']
-    .line
-      =@mp['party']['name']
-    .line
-      ="<img src='#{@mp["mp_profile"]["photo"]}'></img>"
+    .profile-header
+      %h3
+        =@mp['name']
+        (
+        =@mp['party']['name']
+        )
+      %h4
+        Elected from
+        =@mp['constituency']['name']
+        ,
+        =@mp['state_name']
+    .photo
+      .line
+        ="<img src='#{@mp["mp_profile"]["photo"]}'></img>"
     
   .group
     .line
+      Email:
       =@mp['mp_profile']['email']
     .line
+      Present Address:
       =@mp['mp_profile']['present_address']
     .line
+      Permanent Address:
       =@mp['mp_profile']['permanent_address']
   .group
     .line

@@ -8,11 +8,11 @@
       Constituency
     %th
       Party  
-  -@mps.each do |mp|
-    %tr{:onclick=> "window.location.href='/mps/#{mp["id"]}'", :class=> 'row'}
-      %td{:class=> 'name'}
-        =mp['name']
-      %td
-        =mp['constituency']['name']
-      %td
-        =mp['party']['name']
+      -@mps.each do |mp|
+        %tr{:onclick=> "$.facebox({ ajax: '/mps/'+#{mp['id']}});", :class=> 'row'}
+          %td{:class=> 'name'}
+            =mp['name']
+          %td
+            =mp['constituency']['name']
+          %td
+            =mp['party']['name']
