@@ -1,3 +1,9 @@
 h1. Directory of MPs
 
 A Directory of Indian Member of Parliaments. Shows the usage of @api.myminister.info@. 
+
+h1. Todo
+
+* Fix Position, Special Interest, Positions Held, Sports and Clubs, 
+* Search MP by name
+* Progress indicators on Ajax calls.
