@@ -12,18 +12,10 @@ li {
 
 #content {
   width: 920px;
-  margin: auto;
+  margin: 35px auto;
+  overflow: hidden;
 }
   
-#data {
-  background-color: white;
-  padding: 10px;
-  overflow: hidden;
-  -moz-box-shadow: 0 0 80px #C7C7CA;
-  -webkit-box-shadow: 0 0 80px #C7C7CA;
-}
-
-
 h3 {
   text-align: center;
 }
@@ -31,7 +23,6 @@ h3 {
 #banner {
   width: 100%;
   text-align: center;
-  margin: 35px;
 }
 
 /* --- GLOBAL ---*/
@@ -81,7 +72,18 @@ table {
 /*--- STATES PAGE ---*/
 /* --- MP PAGE ---*/
 #profile {
-  width: 600px;
+  width: 750px;
+}
+
+.group {
+  border: 1px dotted #FF7F00;
+  padding: 7px;
+  margin: 5px;
+  height: 100%;
+}
+
+.header {
+  font-weight: bold;
 }
 
 .group-header {
@@ -94,13 +96,42 @@ table {
 
 .profile-header {
   float: left;
+  padding: 20px 0 0 120px;
 }
 
 .photo {
   float: right;
 }
 
+.line {
+  overflow: hidden;
+}
 .label {
   font-weight: bold;
 }
+
+.left-column {
+  width: 45%;  
+  float: left;
+}
+
+.right-column {
+  width: 45%;  
+  float: right;
+}
+
+.single-colummn {
+  width: 90%;
+}
+
+#footer {
+  text-align: center;
+}
+#footer a {
+  font-size:8px;
+  text-transform:uppercase;
+  color: #111111;
+  text-decoration: none;
+}
+
 /* --- MP PAGE ---*/

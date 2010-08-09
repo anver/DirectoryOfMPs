@@ -7,3 +7,11 @@ h1. Todo
 * Fix Position, Special Interest, Positions Held, Sports and Clubs, 
 * Search MP by name
 * Progress indicators on Ajax calls.
+
+h1. Ideas for achievement app
+
+* No of years in service.
+* No of positions
+* Education - Phd
+* No email
+* Age
