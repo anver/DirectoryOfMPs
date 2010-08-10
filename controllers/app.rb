@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'httparty'
+require 'json'
 
 get '/' do
   redirect '/states'
@@ -22,12 +23,11 @@ get '/mps/:id' do |id|
 end
 
 get '/search' do
-  response = get "/search/mp/#{params['term']}"
-  p response
-  response
+  content_type :json
+  get "/search/mp/#{params['term']}", false
 end
 
-def get url
+def get(url, parse_json= true)
   response = HTTParty.get "#{$API_URL}#{url}.json"
-  Crack::JSON.parse(response.body)
+  parse_json ? Crack::JSON.parse(response.body) : response.body
 end

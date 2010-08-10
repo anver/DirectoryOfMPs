@@ -3,8 +3,9 @@
   %head
     %title Directory of Indian MPs
     %link{ :rel=> "stylesheet", :href=>"/css/styles.css", :type=> "text/css" }
+    %link{ :rel =>"stylesheet", :href => 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.3/themes/base/jquery-ui.css', :type=> "text/css"}    
     %script{ :type=> "text/javascript", :src=>"http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"}
-    %script{ :type=> "text/javascript", :src=>"http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.3/jquery-ui.min.js"}
+    %script{ :type=> "text/javascript", :src=>"http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.3/jquery-ui.js"}
     
     %script{ :type=> "text/javascript", :src=>"/facebox/facebox.js"}
     %link{ :rel=> "stylesheet", :href=>"/facebox/facebox.css", :type=> "text/css" }
@@ -32,9 +33,18 @@
   })();
   
   $(document).ready(function(){
+  
     $('#search').autocomplete({
-      source: '/search',
-      minLength: 2
-    });
+        source: '/search',
+        minLength: 2,
+        select: function(event, ui) {
+          $.facebox({ ajax: '/mps/'+ ui.item.id});
+          return false;
+        }
+    }).data( "autocomplete" )._renderItem = function( ul, item ) {
+         return $( "<li></li>" ).data( "item.autocomplete", item)
+           .append( "<a class='ui-corner-all'>" + item.name + "</a>")
+           .appendTo( ul );
+     };
   });
   

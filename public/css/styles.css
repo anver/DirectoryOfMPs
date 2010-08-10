@@ -10,6 +10,14 @@ li {
   list-style-type: none;
 }
 
+#data {
+  background-color: white;
+  padding: 10px;
+  overflow: hidden;
+  -moz-box-shadow: 0 0 80px #C7C7CA;
+  -webkit-box-shadow: 0 0 80px #C7C7CA;
+}
+
 #content {
   width: 920px;
   margin: 35px auto;
@@ -122,6 +130,11 @@ table {
 
 .single-colummn {
   width: 90%;
+}
+
+#search {
+  width: 300px;
+<input type="text" style="border : none; font-family : Verdana; color : red; background : #FFCC00;" />  
 }
 
 #footer {
