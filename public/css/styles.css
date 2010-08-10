@@ -96,11 +96,8 @@ table {
 }
 
 .group-header {
-  background-color: #FCFCFC;
   overflow: hidden;
   padding: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
 }
 
 .profile-header {
