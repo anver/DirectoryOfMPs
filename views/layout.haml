@@ -6,6 +6,7 @@
     %link{ :rel =>"stylesheet", :href => 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.3/themes/base/jquery-ui.css', :type=> "text/css"}    
     %script{ :type=> "text/javascript", :src=>"http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"}
     %script{ :type=> "text/javascript", :src=>"http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.3/jquery-ui.js"}
+    %script{ :type=> "text/javascript", :src=>"/js/jquery.hinty.js"}
     
     %script{ :type=> "text/javascript", :src=>"/facebox/facebox.js"}
     %link{ :rel=> "stylesheet", :href=>"/facebox/facebox.css", :type=> "text/css" }
@@ -15,7 +16,7 @@
       #banner
         %h1
           Member of Parliament Directory
-        %input{:type=> 'text', :id=> 'search'}
+        %input{:type=> 'text', :id=> 'search', :title=>"Lookup your MP by name", :class=> 'hintable'}
       =yield
     #footer
       %a{:href=> "javascript:void(0)", :onclick=>"window.open('http://www.activesphere.com')"}
@@ -46,5 +47,7 @@
            .append( "<a class='ui-corner-all'>" + item.name + "</a>")
            .appendTo( ul );
      };
+     
+    $('.hintable').hinty(); 
   });
   

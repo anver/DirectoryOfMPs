@@ -13,9 +13,10 @@ li {
 #data {
   background-color: white;
   padding: 10px;
+  margin: 20px;
   overflow: hidden;
-  -moz-box-shadow: 0 0 80px #C7C7CA;
-  -webkit-box-shadow: 0 0 80px #C7C7CA;
+  -moz-box-shadow: 0 0 20px #C7C7CA;
+  -webkit-box-shadow: 0 0 20px #C7C7CA;
 }
 
 #content {
@@ -62,7 +63,7 @@ table .row:hover {
 
 #states {
   float: left;
-  width: 410px;
+  width: 380px;
 }
 
 #states table, #mps table {
@@ -71,7 +72,7 @@ table .row:hover {
 
 #mps {
   float: left;
-  width: 490px;
+  width: 480px;
 }
 
 table {
@@ -134,7 +135,22 @@ table {
 
 #search {
   width: 300px;
-<input type="text" style="border : none; font-family : Verdana; color : red; background : #FFCC00;" />  
+  font-size: 1.1em;
+  height:20px;
+  outline:3px solid #EEEEEE;
+  padding:4px 3px 2px;
+  width:305px;
+  font-family: Verdana,Arial,sans-serif;
+}
+
+#search .hintable {
+  color:#222222;  
+}
+
+.hint_text {
+  font-style: italic;
+  color: #C7C7CA;
+  text-align: center;
 }
 
 #footer {
