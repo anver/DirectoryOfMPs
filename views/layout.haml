@@ -14,6 +14,7 @@
       #banner
         %h1
           Member of Parliament Directory
+        %input{:type=> 'text', :id=> 'search'}
       =yield
     #footer
       %a{:href=> "javascript:void(0)", :onclick=>"window.open('http://www.activesphere.com')"}
@@ -29,3 +30,11 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+  
+  $(document).ready(function(){
+    $('#search').autocomplete({
+      source: '/search',
+      minLength: 2
+    });
+  });
+  

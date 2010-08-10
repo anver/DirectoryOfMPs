@@ -21,6 +21,12 @@ get '/mps/:id' do |id|
   haml :mp, :layout => false
 end
 
+get '/search' do
+  response = get "/search/mp/#{params['term']}"
+  p response
+  response
+end
+
 def get url
   response = HTTParty.get "#{$API_URL}#{url}.json"
   Crack::JSON.parse(response.body)
