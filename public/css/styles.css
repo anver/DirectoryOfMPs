@@ -152,9 +152,10 @@ table {
 
 #footer {
   text-align: center;
+  padding-bottom: 10px;
 }
 #footer a {
-  font-size:8px;
+  font-size:10px;
   text-transform:uppercase;
   color: #111111;
   text-decoration: none;

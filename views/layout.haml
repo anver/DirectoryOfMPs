@@ -19,6 +19,9 @@
         %input{:type=> 'text', :id=> 'search', :title=>"Lookup your MP by name", :class=> 'hintable'}
       =yield
     #footer
+      %a{:href=> "javascript:void(0)", :onclick=>"window.open('http://myminister.info')"}
+        Based on the MyMinister API
+      %br
       %a{:href=> "javascript:void(0)", :onclick=>"window.open('http://www.activesphere.com')"}
         An ActiveSphere Initiative
 
