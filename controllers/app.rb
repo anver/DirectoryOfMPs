@@ -4,10 +4,7 @@ require 'httparty'
 require 'json'
 
 get '/' do
-  redirect '/states'
-end
-
-get "/states" do
+  headers['Cache-Control'] = "public, max-age=#{60*60*24*100}"
   @states = get '/states'
   haml :states
 end

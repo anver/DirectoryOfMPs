@@ -10,6 +10,7 @@ set :root,  root_dir
 set :public, public_path
 set :views => File.join(root_dir,'views')
 set :app_file, File.join(root_dir, 'controllers','app.rb')
+set :sessions, false
 
 disable :run, :reload 
 use Rack::Static, :urls => ["/css", "/images"], :root => public_path
