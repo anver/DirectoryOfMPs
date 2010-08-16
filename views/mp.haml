@@ -17,6 +17,26 @@
   .line
     .group.left-column
       .header
+        In Parliament
+      .line
+        %i
+          Attendance:
+        ="#{@mp['mp_statistic']['attendance']}%"
+      .line
+        %i
+          Debates Participated In:
+        =@mp['mp_statistic']['debates']
+      .line
+        %i 
+          Private Member Bills Introduced: 
+        =@mp['mp_statistic']['private_member_bills']
+      .line
+        %i 
+          Questions Asked:
+        =@mp['mp_statistic']['questions']
+
+    .group.right-column
+      .header
         Email
       =@mp['mp_profile']['email'] || "Unspecified"
 
@@ -25,7 +45,7 @@
       .header
         Education
       =@mp['mp_profile']['educational_qualifications']
-    .group.left-column
+    .group.right-column
       .header
         Profession
       =@mp['mp_profile']['profession']
@@ -66,7 +86,7 @@
         Present Address
       =@mp['mp_profile']['present_address']
 
-    .group.left-column
+    .group.right-column
       .header
         Permanent Address
       =@mp['mp_profile']['permanent_address']
