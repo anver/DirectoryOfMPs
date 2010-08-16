@@ -4,7 +4,7 @@ A Directory of Indian Member of Parliaments. Shows the usage of @api.myminister.
 
 h1. Todo
 
-* Search MP by name
+* Search MP by name 
 
 h1. Ideas for achievement app
 
