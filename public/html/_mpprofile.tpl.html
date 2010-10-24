@@ -91,11 +91,12 @@
       <div class='header'>
         Personal Information
       </div>
-      -%w(date_of_birth place_of_birth fathers_name mothers_name martial_status spouse_name no_of_sons no_of_daughters  date_of_marriage).each do |info|
+      {{each(i, value) ["date_of_birth", "place_of_birth", "fathers_name", "mothers_name", "martial_status", "spouse_name", "no_of_sons", "no_of_daughters", "date_of_marriage"]}}
       <div class='info'>
-        <i>="#{info.gsub("_"," ").capitalize}: "</i>
-        =@mp['mp_profile'][info]
+        <i>${value.replace(/_/g, " ")}:</i>
+        ${mpProfile.get("mp_profile")[value]}
       </div>
+      {{/each}}
     </div>
   </div>
   <div class='line'>
