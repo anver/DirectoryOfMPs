@@ -24,7 +24,7 @@ li {
   margin: 35px auto;
   overflow: hidden;
 }
-  
+
 h3 {
   text-align: center;
 }
@@ -61,18 +61,18 @@ table .row:hover {
   border-bottom: 1px dotted orange;
 }
 
-#states {
-  float: left;
-  width: 380px;
-}
-
 #states table, #mps table {
   margin: auto;
 }
 
-#mps {
+#col-1 {
   float: left;
-  width: 480px;
+  width: 380px;
+}
+
+#col-2 {
+  float: left;
+  width: 480px;  
 }
 
 table {

@@ -1,4 +1,9 @@
-var State = Backbone.Model.extend({});
+var State = Backbone.Model.extend({
+  htmlId : function() {
+    return "state-" + this.id;
+  }
+});
+
 var States  = Backbone.Collection.extend({
   model: State,
   initialize: function(){
@@ -15,8 +20,6 @@ var States  = Backbone.Collection.extend({
 
 var StateView = Backbone.View.extend({
   id: 'states',
-
-  events: {},
   initialize: function(){
     this.handleEvents();
     this.states = new States();
@@ -26,7 +29,7 @@ var StateView = Backbone.View.extend({
   },
 
   updateView: function() {
-    $("#data").html(this.render().el);
+    this.render();
   },
 
   render: function() {
@@ -35,13 +38,19 @@ var StateView = Backbone.View.extend({
     }
     var that = this;
     $.get('/html/_states.tpl.html', function(statesTemplate) {
-      that.compiledView = $.tmpl(statesTemplate, {stateList: that.states.models})
-      that.$(that.el).html(that.compiledView);
+      that.renderComplete(statesTemplate);
     });
     return this;
-  }
-});
+  },
 
-$(document).ready(function(){
-  var app = new StateView()
+  renderComplete: function(statesTemplate) {
+    this.compiledView = $.tmpl(statesTemplate, {stateList: this.states.models});
+    this.$(this.el).html(this.compiledView);
+    $("#col-1").html(this.el);
+    $("#states table tr[id]").click(this.stateSelected);
+  },
+
+  stateSelected: function(){
+    var mpView = new MPView({stateId: this.id.replace("state-","")});
+  }
 });

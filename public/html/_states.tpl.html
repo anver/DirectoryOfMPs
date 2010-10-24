@@ -11,7 +11,7 @@
 		</th>
 	</tr>
 	{{each(i, state) stateList}}
-	<tr>
+	<tr id= ${state.htmlId()} class='row'>
 		<td class='name'>
 			${state.get("name")}
 		</td>
@@ -21,4 +21,3 @@
 	</tr>
 	{{/each}}
 </table>
-</div>

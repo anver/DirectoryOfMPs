@@ -1,8 +1,29 @@
-<div id='mps'>
-	<h3>
-		Members of Parliament
-	</h3>
-	<center>
-		Select a state.
-	</center>
-</div>
+<h3>
+	Members of Parliament
+</h3>
+<table colspan= "3">
+	<tr>
+		<th>
+			Name
+		</th>
+		<th>
+			Constituency
+		</th>
+		<th>
+			Party
+		</th>		
+	</tr>
+	{{each(i, mp) mpList}}
+	<tr id=${mp.htmlId()} class='row'>
+		<td class='name'>
+			${mp.get("name")}
+		</td>
+		<td>
+			${mp.get("constituency").name}
+		</td>
+		<td>
+			${mp.get("party").name}
+		</td>
+	</tr>
+	{{/each}}
+</table>
