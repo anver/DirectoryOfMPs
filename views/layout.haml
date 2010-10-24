@@ -4,7 +4,8 @@
     %title Directory of Indian MPs
     %link{ :rel=> "stylesheet", :href=>"/css/styles.css", :type=> "text/css" }
     %link{ :rel =>"stylesheet", :href => 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.3/themes/base/jquery-ui.css', :type=> "text/css"}    
-    %script{ :type=> "text/javascript", :src=>"http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"}
+    / %script{ :type=> "text/javascript", :src=>"http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"}
+    %script{ :type=> "text/javascript", :src=>"/js/jquery.js"}    
     %script{ :type=> "text/javascript", :src=>"http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.3/jquery-ui.js"}
     %script{ :type=> "text/javascript", :src=>"/js/jquery.hinty.js"}
     
@@ -25,32 +26,9 @@
       %a{:href=> "javascript:void(0)", :onclick=>"window.open('http://www.activesphere.com')"}
         An ActiveSphere Initiative
 
-:javascript
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-10221263-8']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-  
-  $(document).ready(function(){
-  
-    $('#search').autocomplete({
-        source: '/search',
-        minLength: 2,
-        select: function(event, ui) {
-          $.facebox({ ajax: '/mps/'+ ui.item.id});
-          return false;
-        }
-    }).data( "autocomplete" )._renderItem = function( ul, item ) {
-         return $( "<li></li>" ).data( "item.autocomplete", item)
-           .append( "<a class='ui-corner-all'>" + item.name + "</a>")
-           .appendTo( ul );
-     };
-     
-    $('.hintable').hinty(); 
-  });
-  
+%script{ :type=> "text/javascript", :src=>"/js/underscore.js"}
+%script{ :type=> "text/javascript", :src=>"/js/json2.js"}
+%script{ :type=> "text/javascript", :src=>"/js/backbone.js"}
+%script{ :type=> "text/javascript", :src=>"/js/app.js"}
+%script{ :type=> "text/javascript", :src=>"/js/ga.js"}
+%script{ :type=> "text/javascript", :src=>"/js/search.js"}

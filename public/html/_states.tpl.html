@@ -1,0 +1,24 @@
+<h3>
+	States and Union Territories
+</h3>
+<table colspan= "2">
+	<tr>
+		<th>
+			Name
+		</th>
+		<th>
+			No. of MPs
+		</th>
+	</tr>
+	{{each(i, state) stateList}}
+	<tr>
+		<td class='name'>
+			${state.get("name")}
+		</td>
+		<td class='no_of_mps'>
+			${state.get("no_of_mps")}
+		</td>
+	</tr>
+	{{/each}}
+</table>
+</div>
