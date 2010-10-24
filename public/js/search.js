@@ -1,15 +1,32 @@
 $(document).ready(function(){
   $('#search').autocomplete({
-    source: '/search',
+		source: function( request, response ) {
+			$.ajax({
+				url: "http://api.myminister.info:3000/search/mp.json",
+				dataType: "jsonp",
+        data: {
+        	name: request.term
+        },
+        
+        success: function( mps ) {
+          response( $.map( mps, function( mp ) {
+            return {
+  						label: mp.name,
+  						value: mp.name,
+  						id: mp.id
+            }
+					}))
+        }
+				})
+			},
+        
     minLength: 2,
+    dataType: 'jsonp',
     select: function(event, ui) {
-      $.facebox({ ajax: '/mps/'+ ui.item.id});
+      new MPProfileView({mpId: ui.item.id});
       return false;
     }
-  }).data( "autocomplete" )._renderItem = function( ul, item ) {
-    return $( "<li></li>" ).data( "item.autocomplete", item)
-    .append( "<a class='ui-corner-all'>" + item.name + "</a>")
-    .appendTo( ul );
-  };
+  });
+  
   $('.hintable').hinty(); 
 });
