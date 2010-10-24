@@ -51,6 +51,6 @@ var StateView = Backbone.View.extend({
   },
 
   stateSelected: function(){
-    var mpView = new MPView({stateId: this.id.replace("state-","")});
+    new MPView({stateId: this.id.replace("state-","")});
   }
 });

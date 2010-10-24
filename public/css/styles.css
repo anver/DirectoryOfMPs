@@ -149,6 +149,13 @@ table {
   color: #C7C7CA;
   text-align: center;
 }
+.activity, .header {
+  margin: 3px 0;
+}
+
+.activity i {
+  text-transform:capitalize;
+}
 
 #footer {
   text-align: center;

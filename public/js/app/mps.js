@@ -43,5 +43,10 @@ var MPView = Backbone.View.extend({
     var compiledView = $.tmpl(mpTemplate, {mpList: this.mps.models});
     this.$(this.el).html(compiledView);
     $("#col-2").html(this.el);
+    $("#mps table tr[id]").click(this.mpSelected);
+  },
+  
+  mpSelected: function() {
+    new MPProfileView({mpId: this.id.replace("mp-","")});
   }
 });
