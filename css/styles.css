@@ -13,7 +13,7 @@ li {
 #data {
   background-color: white;
   padding: 10px;
-  margin: 40px;
+  margin: 40px 20px;
   overflow: hidden;
   min-height: 800px;
   -moz-box-shadow: 0 0 20px #C7C7CA;
