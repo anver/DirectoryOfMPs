@@ -6,7 +6,7 @@ var MPProfile = Backbone.Model.extend({
   initialize : function(params) {
     var that = this;
     $.ajax({
-      url : 'http://api.myminister.info:3000/mps/' + params.mpId+ '.json',
+      url : Config.api_host + '/mps/' + params.mpId+ '.json',
       dataType : "jsonp",
       success : function (data, status, xhr) {
         that.set($.parseJSON(data.mpProfile));

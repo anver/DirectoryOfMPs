@@ -2,7 +2,7 @@ $(document).ready(function(){
   $('#search').autocomplete({
 		source: function( request, response ) {
 			$.ajax({
-				url: "http://api.myminister.info:3000/search/mp.json",
+				url: Config.api_host + "/search/mp.json",
 				dataType: "jsonp",
         data: {
         	name: request.term

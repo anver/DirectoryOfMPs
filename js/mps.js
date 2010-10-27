@@ -8,7 +8,7 @@ var MPs = Backbone.Collection.extend({
   initialize: function(params){
     var that = this;
     $.ajax({
-      url : 'http://api.myminister.info:3000/states/' + params.stateId+ '/mps.json',
+      url : Config.api_host + '/states/' + params.stateId+ '/mps.json',
       dataType : "jsonp",
       success : function (data, status, xhr) {
         that.refresh($.parseJSON(data.model));

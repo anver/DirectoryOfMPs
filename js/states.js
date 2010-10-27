@@ -9,7 +9,7 @@ var States  = Backbone.Collection.extend({
   initialize: function(){
     var that = this;
     $.ajax({
-      url : 'http://api.myminister.info:3000/states.json',
+      url : Config.api_host + '/states.json',
       dataType : "jsonp",
       success : function (data, status, xhr) {
         that.refresh($.parseJSON(data.model));
