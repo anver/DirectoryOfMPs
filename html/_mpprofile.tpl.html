@@ -1,0 +1,116 @@
+<div id='profile'>
+  <div class='group-header'>
+    <div class='profile-header'>
+      <h3>
+        ${mpProfile.get("name")}
+        (
+        ${mpProfile.get("party").name}
+        )
+      </h3>
+      <h4>
+        Elected from
+        ${mpProfile.get("constituency").name}
+        ,
+        ${mpProfile.get("state_name")}
+      </h4>
+    </div>
+    <div class='photo'>
+      <img src=${mpProfile.get("mp_profile").photo} height=150></img>
+    </div>
+  </div>
+  <div class='line'>
+    <div class='group left-column'>
+      <div class='header'>
+        In Parliament
+      </div>
+      <div class='line'>
+        <i>Attendance:</i>
+          ${mpProfile.get("mp_statistic").attendance} %
+      </div>
+      <div class='line'>
+        <i>Debates Participated In:</i>
+          ${mpProfile.get("mp_statistic").debates}
+      </div>
+      <div class='line'>
+        <i>Private Member Bills Introduced:</i>
+          ${mpProfile.get("mp_statistic").private_member_bills}
+      </div>
+      <div class='line'>
+        <i>Questions Asked:</i>
+          ${mpProfile.get("mp_statistic").questions}
+      </div>
+    </div>
+    <div class='group right-column'>
+      <div class='header'>
+        Email
+      </div>
+        ${mpProfile.get("mp_profile").email}
+    </div>
+  </div>
+  <div class='line'>
+    <div class='group left-column'>
+      <div class='header'>
+        Education
+      </div>
+      ${mpProfile.get("mp_profile").educational_qualifications}
+    </div>
+    <div class='group right-column'>
+      <div class='header'>
+        Profession
+      </div>
+      ${mpProfile.get("mp_profile").profession}
+    </div>
+  </div>
+  <div class='line'>
+    <div class='group single-column'>
+      <div class='header'>
+        Positions Held
+      </div>
+      {{each(i, position) mpProfile.get("mp_profile").positions}}
+        <div class="position">
+          <i>${position.period} :</i>${position.name}
+        </div>
+	    {{/each}}
+    </div>
+  </div>
+  <div class='line'>
+    <div class='group single-column'>
+      <div class='header'>
+        Activities
+      </div>
+      {{each(key, activity) mpProfile.get("mp_profile").activity}}
+        <div class='activity'>
+          <i>${key.replace(/_/g, " ")}:</i>
+          ${activity}
+        </div>
+      {{/each}}
+    </div>
+  </div>
+  <div class='line'>
+    <div class='group single-column'>
+      <div class='header'>
+        Personal Information
+      </div>
+      {{each(i, value) ["date_of_birth", "place_of_birth", "fathers_name", "mothers_name", "martial_status", "spouse_name", "no_of_sons", "no_of_daughters", "date_of_marriage"]}}
+      <div class='info'>
+        <i>${value.replace(/_/g, " ")}:</i>
+        ${mpProfile.get("mp_profile")[value]}
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  <div class='line'>
+    <div class='group left-column'>
+      <div class='header'>
+        Present Address
+      </div>
+      ${mpProfile.get('mp_profile').present_address}
+    </div>
+    <div class='group right-column'>
+      <div class='header'>
+        Permanent Address
+      </div>
+      ${mpProfile.get('mp_profile').permanent_address}
+    </div>
+  </div>
+</div>
