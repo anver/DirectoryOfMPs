@@ -9,6 +9,6 @@ run Sinatra::Application
 
 get '/' do
   content_type 'text/html'  
-  response['Expires'] = (Time.now + 60*60*24*356*3).httpdate
+  response.headers['Cache-Control'] = "public, max-age=#{60*60*24*356*3}"
   File.read(File.join('html', 'index.html'))
 end
