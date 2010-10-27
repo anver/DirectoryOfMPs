@@ -40,6 +40,6 @@ var MPProfileView = Backbone.View.extend({
   renderComplete: function(mpprofileTemplate) {
     var compiledView = $.tmpl(mpprofileTemplate, {mpProfile: this.mpProfile});
     this.$(this.el).html(compiledView);
-    $.facebox(this.el);
+    $(this.el).dialog({minHeight: 900, width: 800, closeOnEscape: true, modal: true});
   }
 });

@@ -168,4 +168,12 @@ table {
   text-decoration: none;
 }
 
+.ui-dialog .ui-dialog-titlebar {
+  padding: 0px;
+}
+
+/*.ui-widget-content {
+  border: 10px solid #AAAAAA;
+}  
+*/
 /* --- MP PAGE ---*/

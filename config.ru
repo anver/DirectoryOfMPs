@@ -1,8 +1,12 @@
+# Helpful when hosting locally.
+
 require 'rubygems'
-root_dir = File.dirname(__FILE__) 
-public_path = File.join(root_dir, "public")
-set :root,  root_dir
-set :public, public_path
-use Rack::Static, :urls => ["/css", "/images", '/facebox', '/js', '/html'], :root => public_path
+require 'sinatra'
+
+use Rack::Static, :urls => ["/css", "/html", "/js", "/support", ]
+
 run Sinatra::Application
 
+get '/' do
+  File.read(File.join('html', 'index.html'))
+end
