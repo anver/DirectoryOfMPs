@@ -1,5 +1,5 @@
 var Config = {
-  api_host: "http://localhost:3000"
+  api_host: "http://api.myminister.info"
 }
 
 $(document).ready(function(){
