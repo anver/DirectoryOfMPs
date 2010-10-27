@@ -3,7 +3,7 @@
 require 'rubygems'
 require 'sinatra'
 
-use Rack::Static, :urls => ["/css", "/html", "/js", "/support", ]
+use Rack::Static, :urls => ["/css", "/html", "/js", "/images", "/support"]
 
 run Sinatra::Application
 
