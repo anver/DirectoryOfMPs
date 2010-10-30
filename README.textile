@@ -2,6 +2,21 @@ h1. Directory of MPs
 
 A Directory of Indian Member of Parliaments. Shows the usage of @api.myminister.info@. 
 
+
 h1. Development
+
 * Uses Backbonejs with JSONP and JQuery Templates.
 * clone and shotgun. Uses Sinatra to host static files at the moment.
+
+h1. Todo
+
+* The ability to embed and link to MP profiles from other websites
+
+h1. Ideas for achievement app
+
+* No of years in service.
+* No of positions
+* Education - Phd
+* No email
+* Age
+

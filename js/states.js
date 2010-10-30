@@ -27,7 +27,11 @@ var StateView = Backbone.View.extend({
     _.bindAll(this, "updateView");
     this.states.bind('refresh', this.updateView);
   },
-
+  
+  events: {
+    "click #states table tr[id]": "stateSelected"
+  },
+  
   updateView: function() {
     this.render();
   },
@@ -47,10 +51,9 @@ var StateView = Backbone.View.extend({
     this.compiledView = $.tmpl(statesTemplate, {stateList: this.states.models});
     this.$(this.el).html(this.compiledView);
     $("#col-1").html(this.el);
-    $("#states table tr[id]").click(this.stateSelected);
   },
 
-  stateSelected: function(){
-    new MPView({stateId: this.id.replace("state-","")});
+  stateSelected: function(event){
+    new MPView({stateId: event.currentTarget.id.replace("state-","")});
   }
 });
